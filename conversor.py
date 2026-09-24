@@ -1,5 +1,6 @@
 import os
 import requests
+import math
 from dotenv import load_dotenv
 
 # Le o arquivo .env e pega a chave da API
@@ -9,7 +10,7 @@ API_KEY = os.getenv("API_KEY")
 MOEDAS = ["BRL", "USD", "EUR"]
 
 def pedir_moeda(mensagem):
-   #Pede uma moeda ate o usuario digitar uma valida.
+    """Pede uma moeda ate o usuario digitar uma valida."""
     while True:
         moeda = input(mensagem).strip().upper()
         if moeda in MOEDAS:
@@ -17,12 +18,16 @@ def pedir_moeda(mensagem):
         print("Moeda invalida. Escolha uma das moedas disponiveis.")
 
 def pedir_valor():
-    #Pede um valor ate o usuario digitar um numero valido.
+    """Pede um valor ate o usuario digitar um numero valido."""
     while True:
         entrada = input("Digite o valor a converter: ").replace(",", ".")
         try:
             valor = float(entrada)
         except ValueError:
+            print("Valor invalido. Digite apenas um numero.")
+            continue
+
+        if not math.isfinite(valor):
             print("Valor invalido. Digite apenas um numero.")
             continue
 
@@ -32,7 +37,7 @@ def pedir_valor():
         return valor
 
 def converter(valor, origem, destino):
-    #Pede a conversao para a API. Retorna o resultado ou None se der erro.
+    """Pede a conversao para a API. Retorna o resultado ou None se der erro."""
     url = f"https://v6.exchangerate-api.com/v6/{API_KEY}/pair/{origem}/{destino}/{valor}"
 
     try:
@@ -42,7 +47,7 @@ def converter(valor, origem, destino):
         print("Erro de conexao. Verifique sua internet e tente novamente.")
         return None
 
-    if dados["result"] != "success":
+    if dados.get("result") != "success":
         print("A API retornou um erro:", dados.get("error-type"))
         return None
 
@@ -71,4 +76,5 @@ def main():
             print("Obrigado por usar o conversor!")
             break
 
-main()
+if __name__ == "__main__":
+    main()
