@@ -79,7 +79,7 @@ O `conversor.py` é dividido em pequenas funções:
 
 A conversão em si é feita pela API. O programa se encarrega de validar as entradas, tratar os erros e exibir o resultado com duas casas decimais.
 
-Para mais detalhes (tratamento de erros, limitações, endpoint utilizado), consulte a [documentação técnica](documentacao.md).
+Para mais detalhes (tratamento de erros, limitações, endpoint utilizado), consulte a [documentação técnica](documentação.md).
 
 ## Testes unitários
 
