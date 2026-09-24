@@ -2,6 +2,13 @@
 
 Projeto desenvolvido para a atividade **Parada Obrigatória 1** da disciplina **Alta Qualidade de Software**.
 
+## Quadro Scrum no Trello
+
+Na proposta da atividade, foi solitado o uso do quadro seguindo as regras da metologia ágil Scrum.   
+A partir disso foi criado o quadro "Agile Docs & Code Sprint" na plataforma Trello contendo os blocos com as regras do Scrum: Backlog, To Do, In progress e Done.
+
+#### Estarei anexando o link do quadro no Trello para possível visualização: [Agile Docs & Code Sprint](https://trello.com/invite/b/6ab43843250e9de3fa76702f/ATTI353585188eb236a3f293ed2b77bd99cd9FA2131A/agile-docs-code-sprint).
+
 ## Objetivo do projeto
 
 A atividade simula uma sprint de desenvolvimento no framework Scrum, tendo como produto um sistema simples de conversão de moedas. Os objetivos são:
